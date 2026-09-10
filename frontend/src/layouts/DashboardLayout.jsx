@@ -67,10 +67,21 @@ const DashboardLayout = () => {
       </aside>
 
       <div className="main-col">
-        <header className="topbar">
-          <div className="topbar-title">{PAGE_TITLES[user.role]} workspace</div>
-          <div className="text-muted">{user.email}</div>
-        </header>
+      <header className="topbar">
+  <div className="topbar-title">
+    {PAGE_TITLES[user.role]} workspace
+  </div>
+
+  <div className="topbar-profile">
+    <div className="profile-icon">
+      {user.email.charAt(0).toUpperCase()}
+    </div>
+
+    <div className="profile-email">
+      {user.email}
+    </div>
+  </div>
+</header>
         <main className="page-content">
           <Outlet />
         </main>
